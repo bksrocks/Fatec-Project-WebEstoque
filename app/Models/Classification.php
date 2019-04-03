@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Classification extends Model
 {
-    //
+    {
+        public $fillable = [
+            'descricao'
+        ];
+    }
 }
