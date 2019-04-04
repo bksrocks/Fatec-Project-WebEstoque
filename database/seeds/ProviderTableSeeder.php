@@ -13,7 +13,7 @@ class ProviderTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         for($i=1; $i<=10; $i++) {
-        DB::table('classifications')->insert( [
+        DB::table('providers')->insert( [
             'nome' => $faker->company(),
             'created_at' => \Carbon\Carbon::now(),
         ] );

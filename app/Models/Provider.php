@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Provider extends Model
 {
-    public $fillable = [
+   public $fillable = [
         'nome'
-    ];
+   ];
 }
