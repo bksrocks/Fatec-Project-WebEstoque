@@ -58,7 +58,7 @@ return [
     |
     */
 
-    'layout' => 'top-nav',
+    'layout' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'collapse_sidebar' => true,
+    'collapse_sidebar' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -115,11 +115,18 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Dashboard',
+            'url'         => 'admin/home',
             'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
+            /*'label'       => 4,
+            'label_color' => 'success',*/
+        ],
+        [
+            'text'        => 'Classifications',
+            'url'         => 'admin/classifications',
+            'icon'        => 'file',
+           /* 'label'       => 4,
+            'label_color' => 'success',*/
         ],
         'ACCOUNT SETTINGS',
         [
