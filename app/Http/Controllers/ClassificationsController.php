@@ -1,8 +1,8 @@
 <?php
 
- namespace WebEstoque\Http\Controllers;
+ namespace App\Http\Controllers;
 
- use WebEstoque\Models\Classifications;
+ use App\Models\Classification;
  use Illuminate\Http\Request;
  use Auth;
 
@@ -33,13 +33,13 @@
  public function index()
  {
  // Obtém todos os registros da tabela de classificação
- $classifications = Classifications::orderBy('id', 'desc')->paginate(6);
+ $classification = Classification::orderBy('id', 'desc')->paginate(6);
 
  // Chama a view passando os dados retornados da tabela
  return view(
  'classifications.index',
  [
- 'classifications' => $classifications
+ 'classifications' => $classification
  ]
  );
  }
@@ -82,7 +82,7 @@
  $request->validate($rules, $messages);
 
  // Cria um novo registro
- $classification = new Classifications;
+ $classification = new Classification;
  $classification->descricao = $request->descricao;
 
  // Salva os dados na tabela
@@ -105,7 +105,7 @@
  public function show($id)
  {
  // Localiza e retorna os dados de um registro pelo ID
- $classification = Classifications::findOrFail($id);
+ $classification = Classification::findOrFail($id);
 
  // Chama a view para exibir os dados na tela
  return view(
@@ -129,7 +129,7 @@
  public function edit($id)
  {
  // Localiza o registro pelo seu ID
- $classification = Classifications::findOrFail($id);
+ $classification = Classification::findOrFail($id);
 
  // Chama a view com o formulário para edição do registro
  return view(
@@ -165,7 +165,7 @@
  $request->validate($rules, $messages);
 
  // Cria um novo registro
- $classification = Classifications::findOrFail($id);
+ $classification = Classification::findOrFail($id);
  $classification->descricao = $request->descricao;
 
  // Salva os dados na tabela
@@ -188,7 +188,7 @@ $classification->save();
  public function destroy($id)
  {
  // Retorna o registro pelo ID fornecido
- $classification = Classifications::findOrFail($id);
+ $classification = Classification::findOrFail($id);
 
  // Exclui o registro da tabela
  $classification->delete();
